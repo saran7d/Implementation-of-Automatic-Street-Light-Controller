@@ -39,10 +39,39 @@ LDR Features of LDR are as follows:
 
 
 ## PROGRAM:
-
+```
+int sensorPin = A0;
+int sensorValue = 0;
+void setup()
+{
+Serial.begin(9600);
+pinMode(13, OUTPUT);
+pinMode(7, INPUT);
+}
+void loop()
+{
+sensorValue = analogRead(sensorPin);
+Serial.print("OUTPUT");
+Serial.println(sensorValue);
+delay(500);
+if(sensorValue<=500)
+{
+digitalWrite(13, HIGH);
+delay(5000);
+}
+else
+{
+digitalWrite(13, LOW);
+delay(5000);
+}
+}
+```
 ## CIRCUIT DIAGRAM:
+![image](https://github.com/VarshaAjith1110/Implementation-of-Automatic-Street-Light-Controller/assets/94222288/ca5a2e7f-0d56-4c77-8a2a-4f273a68f874)
 
 ## OUTPUT:
+![image](https://github.com/VarshaAjith1110/Implementation-of-Automatic-Street-Light-Controller/assets/94222288/e5ad3ff9-a159-41ca-b75f-fdd1907984a2)
+
 
 ## RESULT:
 Thus the Automatic Street Light controller was implemented using Arduino UNO controller.
